@@ -11,6 +11,8 @@ namespace SmartMenuLibrary
         public void LoadMenu(string path)
         {
             // Implement ....
+            // hej med dig fjdf
+            Console.WriteLine("hej");
         }
         public void Activate()
         {
