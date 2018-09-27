@@ -12,6 +12,11 @@ namespace SmartMenuLibrary
         
         public void LoadMenu(string path)
         {
+            Console.WriteLine("SmartMenu");
+            Console.WriteLine("Vælg sprog");
+            Console.WriteLine("1 dansk");
+            Console.WriteLine("2 engelsk");
+            /*
             string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
             for (int i = 0; i < 8; i++)
             {
@@ -23,27 +28,47 @@ namespace SmartMenuLibrary
                 Console.WriteLine(text[i]);
             }
 
-
+            */
         }
 
 
         public void Activate()
         {
-            
+
             
             string selection = Console.ReadLine();
-
+            string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
             switch (selection)
             {
-                case "1":
+                case "d":
+                
                     Console.Clear();
-                    Console.WriteLine("Hej");
+                    for (int i = 0; i < 7; i++)
+                    {
+                        Console.WriteLine(text[i]);
+
+                    }
                     
+
+                    switch (selection)
+                    {
+                        case "1":
+                            Console.WriteLine("hej");
+                            break;
+                    }
                     break;
 
+
+
                 case "2":
-                    Console.WriteLine("hej1");
+                    Console.Clear();
+                    for (int i = 12; i < 18; i++)
+                    {
+                        Console.WriteLine(text[i]);
+                    }
                     break;
+
+
 
             }
         }
