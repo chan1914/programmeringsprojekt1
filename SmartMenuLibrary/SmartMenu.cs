@@ -16,7 +16,7 @@ namespace SmartMenuLibrary
             Console.WriteLine("Vælg sprog");
             Console.WriteLine("1 dansk");
             Console.WriteLine("2 engelsk");
-
+            Console.WriteLine("hej");
             /*
             string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
             for (int i = 0; i < 8; i++)
