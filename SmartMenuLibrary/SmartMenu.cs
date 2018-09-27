@@ -56,19 +56,23 @@ namespace SmartMenuLibrary
                     }
                     else if (userinput.Key == ConsoleKey.D2)
                     {
+                        Console.Clear();
                         Console.WriteLine(Functions.DoThis());
                     }
                     else if (userinput.Key == ConsoleKey.D3)
                     {
+                        Console.Clear();
                         Console.WriteLine("hansenis");
                     }
                     else if (userinput.Key == ConsoleKey.D4)
                     {
+                        Console.Clear();
                         Console.WriteLine("gustav");
                     }
                     else if (userinput.Key == ConsoleKey.D0)
                     {
-                      
+                        Console.Clear();
+                        Environment.Exit(0); 
                     }
                     else
                     {
