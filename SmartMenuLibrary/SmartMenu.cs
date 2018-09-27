@@ -51,7 +51,7 @@ namespace SmartMenuLibrary
                     
                     
 
-                    if ()
+                    
                     {
                         Console.WriteLine("hej");
                     }
