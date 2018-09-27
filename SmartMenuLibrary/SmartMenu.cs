@@ -35,7 +35,7 @@ namespace SmartMenuLibrary
         public void Activate()
         {
 
-
+            
             string selection = Console.ReadLine();
             string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
 
@@ -46,6 +46,10 @@ namespace SmartMenuLibrary
                     for (int i = 0; i < 7; i++)
                     {
                         Console.WriteLine(text[i]);
+                    }
+                    if (selection == 1) 
+                    {
+                        Console.WriteLine("Hej");
                     }
                     break;
 
