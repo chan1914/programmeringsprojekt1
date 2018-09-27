@@ -35,10 +35,10 @@ namespace SmartMenuLibrary
         public void Activate()
         {
 
-           
+
             string selection = Console.ReadLine();
             string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
-            
+
             switch (selection)
             {
                 case "d":
@@ -46,26 +46,33 @@ namespace SmartMenuLibrary
                     for (int i = 0; i < 7; i++)
                     {
                         Console.WriteLine(text[i]);
-
                     }
-                    
-                    
+                    break;
 
                     
+
+
+                case "1":
                     {
                         Console.WriteLine("hej");
                     }
                     break;
 
-                    
-                case "2":
-                    Console.Clear();
-                    for (int i = 12; i < 18; i++)
-                    {
-                        Console.WriteLine(text[i]);
-                    }
-                    break;
 
+
+
+
+
+                    /*
+                        case "2":
+                            Console.Clear();
+                            for (int i = 12; i < 18; i++)
+                            {
+                                Console.WriteLine(text[i]);
+                            }
+                            break;
+
+                    */
 
 
             }
