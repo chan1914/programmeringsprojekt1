@@ -60,15 +60,15 @@ namespace SmartMenuLibrary
                     }
                     else if (userinput.Key == ConsoleKey.D3)
                     {
-                        Console.WriteLine();
+                        Console.WriteLine("hansenis");
                     }
                     else if (userinput.Key == ConsoleKey.D4)
                     {
-                        Console.WriteLine();
+                        Console.WriteLine("gustav");
                     }
                     else if (userinput.Key == ConsoleKey.D0)
-                    { 
-                        
+                    {
+                      
                     }
                     else
                     {
