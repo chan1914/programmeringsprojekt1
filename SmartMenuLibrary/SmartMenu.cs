@@ -4,48 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace SmartMenuLibrary
-{/*yo*/
+{
     public class SmartMenu
     {
-        string str;
-
+        
         public void LoadMenu(string path)
         {
-            int counter = 0;
-            string line;
-
-            // Read the file and display it line by line.  
-            System.IO.StreamReader file =
-                new System.IO.StreamReader(@"c:..\..\MenuSpec.txt");
-            while ((line = file.ReadLine()) != null)
+            string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
+            for (int i = 0; i < 8; i++)
             {
-                System.Console.WriteLine(line);
-                counter++;
+                Console.WriteLine(text[i]);
             }
 
-            file.Close();
+            for (int i = 12; i < 18; i++)
+            {
+                Console.WriteLine(text[i]);
+            }
 
-            // Suspend the screen.  
 
         }
 
 
         public void Activate()
         {
-            string line;
             
-         
-            System.IO.StreamReader file =
-               new System.IO.StreamReader(@"c:..\..\MenuSpec.txt");
-            while ((line = file.ReadLine()) != null)
-            {
-                string[] myArray = line.Split(';');
-            }
-            str = line;
-            file.Close();
             
-
             string selection = Console.ReadLine();
 
             switch (selection)

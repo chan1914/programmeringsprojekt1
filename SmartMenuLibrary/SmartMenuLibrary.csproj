@@ -45,5 +45,11 @@
     <Compile Include="SmartMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FunctionLibrary\FunctionLibrary.csproj">
+      <Project>{420e09eb-4efd-43ce-97a3-92e4f1bfc7ea}</Project>
+      <Name>FunctionLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
