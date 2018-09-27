@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FunctionLibrary;
 
 
 namespace SmartMenuLibrary
@@ -35,48 +36,57 @@ namespace SmartMenuLibrary
         public void Activate()
         {
 
-            
+            ConsoleKeyInfo userinput;
             string selection = Console.ReadLine();
             string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
 
             switch (selection)
             {
-                case "d":
+                case "1":
                     Console.Clear();
                     for (int i = 0; i < 7; i++)
                     {
                         Console.WriteLine(text[i]);
                     }
-                    if (selection == 1) 
+                    userinput = Console.ReadKey();
+                    if (userinput.Key == ConsoleKey.D1)
                     {
-                        Console.WriteLine("Hej");
+                        Console.Clear();
+                        Console.WriteLine(Functions.DoThat());
+                    }
+                    else if (userinput.Key == ConsoleKey.D2)
+                    {
+                        Console.WriteLine(Functions.DoThis());
+                    }
+                    else if (userinput.Key == ConsoleKey.D3)
+                    {
+                        Console.WriteLine();
+                    }
+                    else if (userinput.Key == ConsoleKey.D4)
+                    {
+                        Console.WriteLine();
+                    }
+                    else if (userinput.Key == ConsoleKey.D0)
+                    { 
+                        
+                    }
+                    else
+                    {
+                        Console.WriteLine("tryk 1-4 eller 0 for at afslutte");
+                    }
+
+                    break;
+
+                   
+                case "2":
+                    Console.Clear();
+                    for (int i = 12; i < 18; i++)
+                    {
+                        Console.WriteLine(text[i]);
                     }
                     break;
 
                     
-
-
-                case "1":
-                    {
-                        Console.WriteLine("hej");
-                    }
-                    break;
-
-
-
-
-
-
-                    /*
-                        case "2":
-                            Console.Clear();
-                            for (int i = 12; i < 18; i++)
-                            {
-                                Console.WriteLine(text[i]);
-                            }
-                            break;
-
-                    */
 
 
             }
