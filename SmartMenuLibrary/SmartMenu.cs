@@ -8,6 +8,8 @@ namespace SmartMenuLibrary
 {
     public class SmartMenu
     {
+        string str;
+
         public void LoadMenu(string path)
         {
             int counter = 0;
@@ -23,17 +25,35 @@ namespace SmartMenuLibrary
             }
 
             file.Close();
-           
+
             // Suspend the screen.  
-            
+
         }
+
+
         public void Activate()
         {
+            string line;
+            
+         
+            System.IO.StreamReader file =
+               new System.IO.StreamReader(@"c:..\..\MenuSpec.txt");
+            while ((line = file.ReadLine()) != null)
+            {
+                string[] myArray = line.Split(';');
+            }
+            str = line;
+            file.Close();
+            
+
             string selection = Console.ReadLine();
+
             switch (selection)
             {
                 case "1":
+                    Console.Clear();
                     Console.WriteLine("Hej");
+                    
                     break;
 
                 case "2":
@@ -44,3 +64,10 @@ namespace SmartMenuLibrary
         }
     }
 }
+
+
+        
+    
+
+
+    
