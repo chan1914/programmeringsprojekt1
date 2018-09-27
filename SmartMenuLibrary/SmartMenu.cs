@@ -23,13 +23,24 @@ namespace SmartMenuLibrary
             }
 
             file.Close();
-            System.Console.WriteLine("There were {0} lines.", counter);
+           
             // Suspend the screen.  
-            System.Console.ReadLine();
+            
         }
         public void Activate()
         {
-            // Implement ...
+            string selection = Console.ReadLine();
+            switch (selection)
+            {
+                case "1":
+                    Console.WriteLine("Hej");
+                    break;
+
+                case "2":
+                    Console.WriteLine("hej1");
+                    break;
+
+            }
         }
     }
 }
