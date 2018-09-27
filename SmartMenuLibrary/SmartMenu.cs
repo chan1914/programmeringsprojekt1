@@ -16,6 +16,7 @@ namespace SmartMenuLibrary
             Console.WriteLine("Vælg sprog");
             Console.WriteLine("1 dansk");
             Console.WriteLine("2 engelsk");
+
             /*
             string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
             for (int i = 0; i < 8; i++)
@@ -36,10 +37,15 @@ namespace SmartMenuLibrary
         {
 
             
-            string selection = Console.ReadLine();
+            string input = Console.ReadLine();
             string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
 
-            switch (selection)
+            string name = (Console.ReadLine());
+            Console.WriteLine("Is " + name + " ok?");
+            Console.WriteLine("\n(Y)es\n(N)o");
+            string ansys = Console.ReadKey();
+
+            switch (input)
             {
                 case "d":
                     Console.Clear();
@@ -47,24 +53,16 @@ namespace SmartMenuLibrary
                     {
                         Console.WriteLine(text[i]);
                     }
-                    if (selection == 1) 
-                    {
-                        Console.WriteLine("Hej");
-                    }
-                    break;
-
                     
-
-
-                case "1":
+                    if (ansys = ConsoleKey.Y)
+                        Console.Clear();
+                    else
                     {
-                        Console.WriteLine("hej");
+                        Console.WriteLine();
+                        Console.WriteLine("Enter letters only");
                     }
                     break;
-
-
-
-
+                    
 
 
                     /*
