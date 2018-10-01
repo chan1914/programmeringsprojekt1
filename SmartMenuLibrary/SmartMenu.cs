@@ -76,6 +76,7 @@ namespace SmartMenuLibrary
                     }
                     else
                     {
+                        Console.Clear();
                         Console.WriteLine("tryk 1-4 eller 0 for at afslutte");
                     }
 
@@ -87,6 +88,37 @@ namespace SmartMenuLibrary
                     for (int i = 12; i < 18; i++)
                     {
                         Console.WriteLine(text[i]);
+                    }
+                    userinput = Console.ReadKey();
+                    if (userinput.Key == ConsoleKey.D1)
+                    {
+                        Console.Clear();
+                        Console.WriteLine(Functions.DoThat());
+                    }
+                    else if (userinput.Key == ConsoleKey.D2)
+                    {
+                        Console.Clear();
+                        Console.WriteLine(Functions.DoThis());
+                    }
+                    else if (userinput.Key == ConsoleKey.D3)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("hansenis");
+                    }
+                    else if (userinput.Key == ConsoleKey.D4)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("gustav");
+                    }
+                    else if (userinput.Key == ConsoleKey.D0)
+                    {
+                        Console.Clear();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine("press 1-4 or 0 to exit");
                     }
                     break;
 
