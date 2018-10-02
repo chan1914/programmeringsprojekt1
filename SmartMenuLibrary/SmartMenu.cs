@@ -68,11 +68,13 @@ namespace SmartMenuLibrary
                     }
                     else if (userinput.Key == ConsoleKey.D0)
                     {
-                      
+                        
                     }
                     else
                     {
+                        
                         Console.WriteLine("tryk 1-4 eller 0 for at afslutte");
+                        
                     }
 
                     break;
