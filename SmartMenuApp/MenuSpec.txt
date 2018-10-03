@@ -1,18 +1,12 @@
 ﻿========= SmartMenu ===============
 	indtast menupunkt 1-4 for at vælge menuen
-	0. Tryk menupunkt eller 0 for at afslutte
-	1. Beregn rektangletsareal;rectanglearea
-	2. Beregn polyline længde;polylinelength
-	3. Indlæs talserie;listofnumbers
-
-
-
-
-
-
+	0. Tryk menupunkt eller 0 for at afslutte; 1	
+	1. Beregn rektangletsareal;rectanglearea; 2
+	2. Beregn polyline længde;polylinelength; 3
+	3. Indlæs talserie;listofnumbers; 4
 ========= SmartMenu ===============
 	Press menupoint 1-4 to select menu
-	0. exit
-	1. Calculate rektangletsareal;rectanglearea
-	2. Calculate polyline length;polylinelength
-	3. press numberseries;listofnumbers
+	0. exit; 
+	1. Calculate rektangletsareal;rectanglearea; 
+	2. Calculate polyline length;polylinelength; 
+	3. press numberseries;listofnumbers; 

@@ -10,26 +10,21 @@ namespace SmartMenuLibrary
 {
     public class SmartMenu
     {
-        
+        private bool firstArray;
+
         public void LoadMenu(string path)
         {
             Console.WriteLine("SmartMenu");
             Console.WriteLine("Vælg sprog");
             Console.WriteLine("1 dansk");
             Console.WriteLine("2 engelsk");
-            /*
+            
             string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < text.Length; i++)
             {
-                Console.WriteLine(text[i]);
-            }
+                string[] firstArray = text.Take(text.Length / 2).ToArray();
 
-            for (int i = 12; i < 18; i++)
-            {
-                Console.WriteLine(text[i]);
             }
-
-            */
         }
 
 
@@ -44,15 +39,16 @@ namespace SmartMenuLibrary
             {
                 case "1":
                     Console.Clear();
-                    for (int i = 0; i < 7; i++)
+                    for (int i = 0; i < 6; i++)
                     {
                         Console.WriteLine(text[i]);
                     }
+                    
                     userinput = Console.ReadKey();
                     if (userinput.Key == ConsoleKey.D1)
                     {
                         Console.Clear();
-                        Console.WriteLine(Functions.DoThat());
+                        Console.WriteLine(firstArray);
                     }
                     else if (userinput.Key == ConsoleKey.D2)
                     {
@@ -62,7 +58,7 @@ namespace SmartMenuLibrary
                     else if (userinput.Key == ConsoleKey.D3)
                     {
                         Console.Clear();
-                        Console.WriteLine("hansenis");
+                        Console.WriteLine("hansen_is");
                     }
                     else if (userinput.Key == ConsoleKey.D4)
                     {
@@ -85,7 +81,7 @@ namespace SmartMenuLibrary
                    
                 case "2":
                     Console.Clear();
-                    for (int i = 12; i < 18; i++)
+                    for (int i = 6; i < 12; i++)
                     {
                         Console.WriteLine(text[i]);
                     }
@@ -103,7 +99,7 @@ namespace SmartMenuLibrary
                     else if (userinput.Key == ConsoleKey.D3)
                     {
                         Console.Clear();
-                        Console.WriteLine("hansenis");
+                        Console.WriteLine("hansen_is");
                     }
                     else if (userinput.Key == ConsoleKey.D4)
                     {
