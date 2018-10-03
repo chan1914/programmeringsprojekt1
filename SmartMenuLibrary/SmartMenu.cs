@@ -10,21 +10,22 @@ namespace SmartMenuLibrary
 {
     public class SmartMenu
     {
-        private bool firstArray;
-
+        string[] danskText;
+        string[] englishText;
         public void LoadMenu(string path)
         {
+            string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
+            danskText = text.Take(text.Length / 2).ToArray();
+            englishText = text.Skip(text.Length / 2).ToArray();
+
             Console.WriteLine("SmartMenu");
             Console.WriteLine("Vælg sprog");
             Console.WriteLine("1 dansk");
             Console.WriteLine("2 engelsk");
             
-            string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
-            for (int i = 0; i < text.Length; i++)
-            {
-                string[] firstArray = text.Take(text.Length / 2).ToArray();
-
-            }
+            
+            
+            
         }
 
 
@@ -33,22 +34,21 @@ namespace SmartMenuLibrary
 
             ConsoleKeyInfo userinput;
             string selection = Console.ReadLine();
-            string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
-
+           
+            
             switch (selection)
             {
                 case "1":
                     Console.Clear();
-                    for (int i = 0; i < 6; i++)
+                    for (int i = 0; i < danskText.Length; i++)
                     {
-                        Console.WriteLine(text[i]);
+                        Console.WriteLine(danskText[i]);
                     }
-                    
                     userinput = Console.ReadKey();
                     if (userinput.Key == ConsoleKey.D1)
                     {
                         Console.Clear();
-                        Console.WriteLine(firstArray);
+                        Console.WriteLine(Functions.DoThat());
                     }
                     else if (userinput.Key == ConsoleKey.D2)
                     {
@@ -58,7 +58,7 @@ namespace SmartMenuLibrary
                     else if (userinput.Key == ConsoleKey.D3)
                     {
                         Console.Clear();
-                        Console.WriteLine("hansen_is");
+                        Console.WriteLine("hansenis");
                     }
                     else if (userinput.Key == ConsoleKey.D4)
                     {
@@ -81,9 +81,9 @@ namespace SmartMenuLibrary
                    
                 case "2":
                     Console.Clear();
-                    for (int i = 6; i < 12; i++)
+                    for (int i = 0; i < englishText.Length; i++)
                     {
-                        Console.WriteLine(text[i]);
+                        Console.WriteLine(englishText[i]);
                     }
                     userinput = Console.ReadKey();
                     if (userinput.Key == ConsoleKey.D1)
@@ -99,7 +99,7 @@ namespace SmartMenuLibrary
                     else if (userinput.Key == ConsoleKey.D3)
                     {
                         Console.Clear();
-                        Console.WriteLine("hansen_is");
+                        Console.WriteLine("hansenis");
                     }
                     else if (userinput.Key == ConsoleKey.D4)
                     {
