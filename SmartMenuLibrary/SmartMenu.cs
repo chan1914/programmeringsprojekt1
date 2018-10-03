@@ -81,7 +81,7 @@ namespace SmartMenuLibrary
                     }
 
                     break;
-
+                    // hej
                    
                 case "2":
                     Console.Clear();
@@ -121,9 +121,6 @@ namespace SmartMenuLibrary
                         Console.WriteLine("press 1-4 or 0 to exit");
                     }
                     break;
-
-                    
-
 
             }
         }
