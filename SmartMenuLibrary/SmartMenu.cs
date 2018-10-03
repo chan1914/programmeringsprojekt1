@@ -10,22 +10,22 @@ namespace SmartMenuLibrary
 {
     public class SmartMenu
     {
+
+        string start = String.Join(Environment.NewLine, "SmartMenu",
+            "Vælg sprog",
+            "1 dansk",
+            "2 engelsk");
+            
+            
         string[] danskText;
         string[] englishText;
         public void LoadMenu(string path)
         {
+            Console.WriteLine(start);
             string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
             danskText = text.Take(text.Length / 2).ToArray();
             englishText = text.Skip(text.Length / 2).ToArray();
 
-            Console.WriteLine("SmartMenu");
-            Console.WriteLine("Vælg sprog");
-            Console.WriteLine("1 dansk");
-            Console.WriteLine("2 engelsk");
-            
-            
-            
-            
         }
 
 
@@ -33,93 +33,102 @@ namespace SmartMenuLibrary
         {
 
             ConsoleKeyInfo userinput;
-            string selection = Console.ReadLine();
-           
+            string s = Console.ReadLine();
             
-            switch (selection)
-            {
-                case "1":
-                    Console.Clear();
-                    for (int i = 0; i < danskText.Length; i++)
+            int n = int.Parse(s);
+            
+                    switch (n)
                     {
-                        Console.WriteLine(danskText[i]);
-                    }
-                    userinput = Console.ReadKey();
-                    if (userinput.Key == ConsoleKey.D1)
-                    {
-                        Console.Clear();
-                        Console.WriteLine(Functions.DoThat());
-                    }
-                    else if (userinput.Key == ConsoleKey.D2)
-                    {
-                        Console.Clear();
-                        Console.WriteLine(Functions.DoThis());
-                    }
-                    else if (userinput.Key == ConsoleKey.D3)
-                    {
-                        Console.Clear();
-                        Console.WriteLine("hansenis");
-                    }
-                    else if (userinput.Key == ConsoleKey.D4)
-                    {
-                        Console.Clear();
-                        Console.WriteLine("gustav");
-                    }
-                    else if (userinput.Key == ConsoleKey.D0)
-                    {
-                        Console.Clear();
-                        Environment.Exit(0); 
-                    }
-                    else
-                    {
-                        Console.Clear();
-                        Console.WriteLine("tryk 1-4 eller 0 for at afslutte");
-                    }
+                        case 1:
+                            Console.Clear();
+                            for (int i = 0; i < danskText.Length; i++)
+                            {
+                                Console.WriteLine(danskText[i]);
+                            }
+                            userinput = Console.ReadKey();
+                            if (userinput.Key == ConsoleKey.D1)
+                            {
+                                Console.Clear();
+                                Console.WriteLine(Functions.DoThat());
+                            }
+                            else if (userinput.Key == ConsoleKey.D2)
+                            {
+                                Console.Clear();
+                                Console.WriteLine(Functions.DoThis());
+                            }
+                            else if (userinput.Key == ConsoleKey.D3)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("hansenis");
+                            }
+                            else if (userinput.Key == ConsoleKey.D4)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("gustav");
+                            }
+                            else if (userinput.Key == ConsoleKey.D0)
+                            {
+                                Console.Clear();
 
-                    break;
-                    // hej
-                   
-                case "2":
-                    Console.Clear();
-                    for (int i = 0; i < englishText.Length; i++)
-                    {
-                        Console.WriteLine(englishText[i]);
-                    }
-                    userinput = Console.ReadKey();
-                    if (userinput.Key == ConsoleKey.D1)
-                    {
-                        Console.Clear();
-                        Console.WriteLine(Functions.DoThat());
-                    }
-                    else if (userinput.Key == ConsoleKey.D2)
-                    {
-                        Console.Clear();
-                        Console.WriteLine(Functions.DoThis());
-                    }
-                    else if (userinput.Key == ConsoleKey.D3)
-                    {
-                        Console.Clear();
-                        Console.WriteLine("hansenis");
-                    }
-                    else if (userinput.Key == ConsoleKey.D4)
-                    {
-                        Console.Clear();
-                        Console.WriteLine("gustav");
-                    }
-                    else if (userinput.Key == ConsoleKey.D0)
-                    {
-                        Console.Clear();
-                        Environment.Exit(0);
-                    }
-                    else
-                    {
-                        Console.Clear();
-                        Console.WriteLine("press 1-4 or 0 to exit");
-                    }
-                    break;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                Console.WriteLine("tryk 1-4 eller 0 for at afslutte");
 
-            }
-        }
+                            }
+                    Console.WriteLine(start);
+                            Activate();
+                            break;
+
+
+
+
+                        case 2:
+                            Console.Clear();
+                            for (int i = 0; i < englishText.Length; i++)
+                            {
+                                Console.WriteLine(englishText[i]);
+                            }
+                            userinput = Console.ReadKey();
+                            if (userinput.Key == ConsoleKey.D1)
+                            {
+                                Console.Clear();
+                                Console.WriteLine(Functions.DoThat());
+                            }
+                            else if (userinput.Key == ConsoleKey.D2)
+                            {
+                                Console.Clear();
+                                Console.WriteLine(Functions.DoThis());
+                            }
+                            else if (userinput.Key == ConsoleKey.D3)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("hansenis");
+                            }
+                            else if (userinput.Key == ConsoleKey.D4)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("gustav");
+                            }
+                            else if (userinput.Key == ConsoleKey.D0)
+                            {
+                                Console.Clear();
+                                
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                Console.WriteLine("press 1-4 or 0 to exit");
+                            }
+                            Console.WriteLine(start);
+                            Activate();
+                            break;
+
+                    }
+                
+            
+        }   
     }
 }
 
