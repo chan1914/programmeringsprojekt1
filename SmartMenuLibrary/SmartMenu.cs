@@ -12,11 +12,28 @@ namespace SmartMenuLibrary
     {
         string[] danskText;
         string[] englishText;
+        string[] cleanDanskText;
+        int[] callId;
         public void LoadMenu(string path)
         {
             string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
             danskText = text.Take(text.Length / 2).ToArray();
             englishText = text.Skip(text.Length / 2).ToArray();
+
+            cleanDanskText = danskText.Take(";").ToArray();
+            callId = danskText.Skip(";").ToArray();
+
+            /*
+            int[] callId = new int[text.Length];
+            string[] danskTekstLinjer = new string[text.Length];
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                string[] separateInput = danskText.Split();
+                danskTekstLinjer[i] = separateInput[0];
+                callId[i] = int.Parse(separateInput[1]);
+            }
+            */
 
             Console.WriteLine("SmartMenu");
             Console.WriteLine("Vælg sprog");
