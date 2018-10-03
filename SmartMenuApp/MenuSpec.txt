@@ -1,6 +1,6 @@
 ﻿========= SmartMenu Dansk ===============
 	indtast menupunkt 1-4 for at vælge menuen
-	0. aflsut
+	0. afslut
 	1. Beregn rektangletsareal;1
 	2. Beregn polyline længde;2
 	3. Indlæs talserie;3

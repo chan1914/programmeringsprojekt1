@@ -26,12 +26,14 @@ namespace SmartMenuLibrary
             danskText = text.Take(text.Length / 2).ToArray();
             englishText = text.Skip(text.Length / 2).ToArray();
 
+
+           
+
         }
 
-
-        public void Activate()
+            public void Activate()
         {
-
+           
             ConsoleKeyInfo userinput;
             string s = Console.ReadLine();
             
@@ -69,16 +71,18 @@ namespace SmartMenuLibrary
                             else if (userinput.Key == ConsoleKey.D0)
                             {
                                 Console.Clear();
-
+                                Console.WriteLine(start);
+                                Activate();
                             }
                             else
                             {
                                 Console.Clear();
-                                Console.WriteLine("tryk 1-4 eller 0 for at afslutte");
-
+                                Console.WriteLine("fejl start forfra");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(start);
+                                Activate();
                             }
-                    Console.WriteLine(start);
-                            Activate();
+                            
                             break;
 
 
@@ -114,18 +118,32 @@ namespace SmartMenuLibrary
                             else if (userinput.Key == ConsoleKey.D0)
                             {
                                 Console.Clear();
-                                
+                                Console.WriteLine(start);
+                                Activate();
+
                             }
                             else
                             {
                                 Console.Clear();
-                                Console.WriteLine("press 1-4 or 0 to exit");
+                                Console.WriteLine("invalid begin again");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(start);
+                                Activate();
                             }
-                            Console.WriteLine(start);
-                            Activate();
+                
                             break;
 
-                    }
+
+                            default:
+                            {
+                                Console.Clear();
+                                Console.WriteLine("invalid begin again");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(start);
+                                Activate();
+                            }
+                                break;
+            }
                 
             
         }   
