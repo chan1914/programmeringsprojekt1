@@ -9,22 +9,32 @@ using FunctionLibrary;
 namespace SmartMenuLibrary
 {
     public class SmartMenu
-    {
+    {           
+            
+        string[] danskText;
+        string[] englishText;
+        string cleanDanskTextLinesSplit;
+        string cleanDanskTextLines;
+        string callId;
+
 
         string start = String.Join(Environment.NewLine, "SmartMenu",
             "Vælg sprog",
             "1 dansk",
             "2 engelsk");
-            
-            
-        string[] danskText;
-        string[] englishText;
         public void LoadMenu(string path)
         {
             Console.WriteLine(start);
             string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
             danskText = text.Take(text.Length / 2).ToArray();
             englishText = text.Skip(text.Length / 2).ToArray();
+
+            for (int i = 0; i < danskText.Length; i++)
+            {
+                cleanDanskTextLines = danskText[i];
+            }
+            cleanDanskTextLinesSplit = cleanDanskTextLines.Split(';')[0];
+            callId = cleanDanskTextLines.Split(';')[1];
 
         }
 
@@ -36,15 +46,12 @@ namespace SmartMenuLibrary
             string s = Console.ReadLine();
             
             int n = int.Parse(s);
-            
-                    switch (n)
-                    {
-                        case 1:
-                            Console.Clear();
-                            for (int i = 0; i < danskText.Length; i++)
-                            {
-                                Console.WriteLine(danskText[i]);
-                            }
+
+            switch (n)
+            {
+                case 1:
+                    Console.Clear();
+                    Console.WriteLine(cleanDanskTextLinesSplit);
                             userinput = Console.ReadKey();
                             if (userinput.Key == ConsoleKey.D1)
                             {
