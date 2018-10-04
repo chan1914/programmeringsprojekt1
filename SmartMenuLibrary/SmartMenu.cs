@@ -9,16 +9,19 @@ using FunctionLibrary;
 namespace SmartMenuLibrary
 {
     public class SmartMenu
-    {
+    {           
+            
+        string[] danskText;
+        string[] englishText;
+        string cleanDanskTextLinesSplit;
+        string cleanDanskTextLines;
+        string callId;
+
 
         string start = String.Join(Environment.NewLine, "SmartMenu",
             "Vælg sprog",
             "1 dansk",
             "2 engelsk");
-            
-            
-        string[] danskText;
-        string[] englishText;
         public void LoadMenu(string path)
         {
             Console.WriteLine(start);
@@ -26,27 +29,29 @@ namespace SmartMenuLibrary
             danskText = text.Take(text.Length / 2).ToArray();
             englishText = text.Skip(text.Length / 2).ToArray();
 
-
-           
+            for (int i = 0; i < danskText.Length; i++)
+            {
+                cleanDanskTextLines = danskText[i];
+            }
+            cleanDanskTextLinesSplit = cleanDanskTextLines.Split(';')[0];
+            callId = cleanDanskTextLines.Split(';')[1];
 
         }
 
-            public void Activate()
+
+        public void Activate()
         {
-           
+
             ConsoleKeyInfo userinput;
             string s = Console.ReadLine();
             
             int n = int.Parse(s);
-            
-                    switch (n)
-                    {
-                        case 1:
-                            Console.Clear();
-                            for (int i = 0; i < danskText.Length; i++)
-                            {
-                                Console.WriteLine(danskText[i]);
-                            }
+
+            switch (n)
+            {
+                case 1:
+                    Console.Clear();
+                    Console.WriteLine(cleanDanskTextLinesSplit);
                             userinput = Console.ReadKey();
                             if (userinput.Key == ConsoleKey.D1)
                             {
@@ -71,18 +76,16 @@ namespace SmartMenuLibrary
                             else if (userinput.Key == ConsoleKey.D0)
                             {
                                 Console.Clear();
-                                Console.WriteLine(start);
-                                Activate();
+
                             }
                             else
                             {
                                 Console.Clear();
-                                Console.WriteLine("fejl start forfra");
-                                Console.WriteLine(" ");
-                                Console.WriteLine(start);
-                                Activate();
+                                Console.WriteLine("tryk 1-4 eller 0 for at afslutte");
+
                             }
-                            
+                    Console.WriteLine(start);
+                            Activate();
                             break;
 
 
@@ -118,32 +121,18 @@ namespace SmartMenuLibrary
                             else if (userinput.Key == ConsoleKey.D0)
                             {
                                 Console.Clear();
-                                Console.WriteLine(start);
-                                Activate();
-
+                                
                             }
                             else
                             {
                                 Console.Clear();
-                                Console.WriteLine("invalid begin again");
-                                Console.WriteLine(" ");
-                                Console.WriteLine(start);
-                                Activate();
+                                Console.WriteLine("press 1-4 or 0 to exit");
                             }
-                
+                            Console.WriteLine(start);
+                            Activate();
                             break;
 
-
-                            default:
-                            {
-                                Console.Clear();
-                                Console.WriteLine("invalid begin again");
-                                Console.WriteLine(" ");
-                                Console.WriteLine(start);
-                                Activate();
-                            }
-                                break;
-            }
+                    }
                 
             
         }   

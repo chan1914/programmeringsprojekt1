@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartMenuLibrary
 {
-    class Smid_ud
+    class Bindings
     {
-        // Regigeret af Martin x2
-        // fliflop spielberg 
     }
 }
