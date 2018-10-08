@@ -13,32 +13,47 @@ namespace SmartMenuLibrary
             
         string[] danskText;
         string[] englishText;
-        string cleanDanskTextLinesSplit;
-        string cleanDanskTextLines;
-        string callId;
+        int[] callId;
+        int j;
+
+
 
 
         string start = String.Join(Environment.NewLine, "SmartMenu",
             "Vælg sprog",
             "1 dansk",
             "2 engelsk");
+
         public void LoadMenu(string path)
         {
             Console.WriteLine(start);
             string[] text = System.IO.File.ReadAllLines(@"c:..\..\MenuSpec.txt");
             danskText = text.Take(text.Length / 2).ToArray();
             englishText = text.Skip(text.Length / 2).ToArray();
+           
 
             for (int i = 0; i < danskText.Length; i++)
             {
-                cleanDanskTextLines = danskText[i];
+                
+                if (danskText[i].Contains(';'))
+                {
+                    j++;
+                    string[] spliter = danskText[i].Split(';');
+                    danskText[i] = spliter[0];
+
+                }
             }
-            cleanDanskTextLinesSplit = cleanDanskTextLines.Split(';')[0];
-            callId = cleanDanskTextLines.Split(';')[1];
+
+            callId = new int[j];
+
+            for (int i = 0; i < j; i++)
+            {
+                callId[i] = i + 1;
+            }
+
+            
 
         }
-
-
         public void Activate()
         {
 
@@ -51,8 +66,15 @@ namespace SmartMenuLibrary
             {
                 case 1:
                     Console.Clear();
-                    Console.WriteLine(cleanDanskTextLinesSplit);
-                            userinput = Console.ReadKey();
+                    for (int i = 0; i < danskText.Length; i++)
+                    {
+                        Console.WriteLine(danskText[i]); 
+                    }
+                    for (int i = 0; i < callId.Length; i++)
+                    {
+                        Console.WriteLine(callId[i]);
+                    }
+                        userinput = Console.ReadKey();
                             if (userinput.Key == ConsoleKey.D1)
                             {
                                 Console.Clear();
